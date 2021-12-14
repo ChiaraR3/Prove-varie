@@ -13,11 +13,11 @@
          <button class="btn btn-primary" @click="saveTodo">Put it in my list</button>
       </div>
           <ul>
-          <div><li v-for="(todo,index) in todos" 
+          <li v-for="(todo,index) in todos" 
            v-bind:key="todo.id"
-           v-bind:title="todo.task">
-            {{ todo.id }}.{{todo.task}}
-            <button @click="deleteTodo">x</button></li></div>
+           v-bind:title="todo.task"><label><input type="checkbox"><span>
+          {{todo.task}}
+            <button @click="deleteTodo">x</button></span></label></li>
           </ul>
           <p v-if="todos.length === 0">Good job! Everything done!</p>
    </div>
@@ -68,14 +68,58 @@ export default {
 
    <style scoped>
 body {
-    background-color: #ffb6c1;
+    background-color:#ffb6c1;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    text-align: center;
+    text-align:center;
 }
 h1 {
+    margin-top: 30px;
+    background-color: #ffb6c1;
+    border-radius: 10px;
+    border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
     color:red;
 }
-ul.div{
-    border:black
+
+ul{
+   list-style:none;
 }
+input{  
+    border: 0;
+    border-bottom: 3px dashed red;
+    background-color: transparent;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    padding: 10px 15px;
+    width: 70%;
+    color:#494a4b;
+}
+ul input{
+    border: 0;
+    background-color: transparent;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    padding: 15px;
+    width: 5%;
+    color:#494a4b;
+}
+button {
+    margin-top: 6px;
+    border: 3px solid hsl(198, 1%, 29%);
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+span {
+    margin: 50px 0 0 30px;
+}
+ul li {
+    text-align: left;   
+    margin: 10px 60px;
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #494a4b;
+}
+
    </style scoped>
