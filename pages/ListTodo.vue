@@ -1,12 +1,12 @@
 <template>
-  <NuxtLogo/>
+  <ListadoTodo/>
 </template>
 
 <script>
-import NuxtLogo from '@/components/NuxtLogo'
+import ListadoTodo from '@/components/ListadoTodo'
   export default {
     components: {
-      NuxtLogo
+      ListadoTodo
     }
   }
 </script>

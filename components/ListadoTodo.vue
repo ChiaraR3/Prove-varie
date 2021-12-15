@@ -46,7 +46,8 @@ export default {
           task:"Trabajar"
       },
     ],
-    nextTodoId: 4
+    nextTodoId: 4,
+    modifyTodo: false,
   }},
   methods:{
     saveTodo: function(){
@@ -62,64 +63,64 @@ export default {
     },
     deleteTodo: function(todos,index){
         this.todos.splice(index,1);
-        } 
+        
+    },
+    
     }}
-   </script>  
+    </script>  
 
    <style scoped>
-body {
-    background-color:#ffb6c1;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    text-align:center;
-}
-h1 {
-    margin-top: 30px;
-    background-color: #ffb6c1;
-    border-radius: 10px;
-    border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
-    color:red;
-}
+        body {
+            background-color:white;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align:center;
+        }
+        h1 {
+            margin-top: 30px;
+            background-color: white;
+            border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
+            color:red;
+        }
 
-ul{
-   list-style:none;
-}
-input{  
-    border: 0;
-    border-bottom: 3px dashed red;
-    background-color: transparent;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 20px;
-    padding: 10px 15px;
-    width: 70%;
-    color:#494a4b;
-}
-ul input{
-    border: 0;
-    background-color: transparent;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 20px;
-    padding: 15px;
-    width: 5%;
-    color:#494a4b;
-}
-button {
-    margin-top: 6px;
-    border: 3px solid hsl(198, 1%, 29%);
-    border-radius: 8px;
-    padding: 5px 10px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 20px;
-}
+        ul{
+        list-style:none;
+        }
+        input{  
+            border: 0;
+            border-bottom: 3px dashed red;
+            background-color: transparent;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 20px;
+            padding: 10px 15px;
+            width: 70%;
+            color:#494a4b;
+        }
+        ul input{
+            border: 0;
+            background-color: transparent;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 20px;
+            padding: 15px;
+            width: 5%;
+            color:#494a4b;
+        }
+        button {
+            margin-top: 6px;
+            border: 3px solid hsl(198, 1%, 29%);
+            border-radius: 8px;
+            padding: 5px 10px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 20px;
+        }
 
-span {
-    margin: 50px 0 0 30px;
-}
-ul li {
-    text-align: left;   
-    margin: 10px 60px;
-    font-size: 1.4rem;
-    font-weight: 300;
-    color: #494a4b;
-}
-
+        span {
+            margin: 50px 0 0 30px;
+        }
+        ul li {
+            text-align: left;   
+            margin: 10px 60px;
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: red;
+        }
    </style scoped>
