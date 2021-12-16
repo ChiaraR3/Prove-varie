@@ -17,7 +17,7 @@
            v-bind:key="todo.id"
            v-bind:title="todo.task"><label><input type="checkbox"><span>
           {{todo.task}}
-            <button @click="deleteTodo">x</button></span></label></li>
+            <button @click="deleteTodo(todo)">x</button></span></label></li>
           </ul>
           <p v-if="todos.length === 0">Good job! Everything done!</p>
    </div>
@@ -47,7 +47,7 @@ export default {
       },
     ],
     nextTodoId: 4,
-    modifyTodo: false,
+    
   }},
   methods:{
     saveTodo: function(){
@@ -61,9 +61,14 @@ export default {
       this.state=newState;
       this.newTodo="";
     },
-    deleteTodo: function(todos,index){
-        this.todos.splice(index,1);
-        
+    deleteTodo(todo){      
+        this.todos.splice(
+            this.todos.findIndex(function(toRemoveInd){
+                return toRemoveInd.id === todo.id;
+        }),
+        1
+    );
+          
     },
     
     }}
@@ -79,7 +84,7 @@ export default {
             margin-top: 30px;
             background-color: white;
             border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
-            color:red;
+            color:blue;
         }
 
         ul{
@@ -87,13 +92,13 @@ export default {
         }
         input{  
             border: 0;
-            border-bottom: 3px dashed red;
+            border-bottom: 3px dashed blue;
             background-color: transparent;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             font-size: 20px;
             padding: 10px 15px;
             width: 70%;
-            color:#494a4b;
+            color:blue;
         }
         ul input{
             border: 0;
@@ -102,7 +107,7 @@ export default {
             font-size: 20px;
             padding: 15px;
             width: 5%;
-            color:#494a4b;
+            color:blue;
         }
         button {
             margin-top: 6px;
@@ -121,6 +126,9 @@ export default {
             margin: 10px 60px;
             font-size: 1.4rem;
             font-weight: 300;
-            color: red;
+            color: green;
+        }
+        ul li button{
+            color:red;
         }
    </style scoped>
