@@ -1,9 +1,12 @@
 <template>
-  <Tutorial/>
+  <NuxtLogo/>
 </template>
 
 <script>
-export default {
-  name: 'IndexPage'
-}
+import NuxtLogo from '@/components/NuxtLogo'
+  export default {
+    components: {
+      NuxtLogo
+    }
+  }
 </script>
