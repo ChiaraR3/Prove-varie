@@ -1,12 +1,12 @@
 
 <template>
-<v-btn
+
+ <v-btn
   color="primary"
-  depressed
-  elevation="14"
-  plain
-  raised
-  x-large
-  x-small
-></v-btn><scole></scole>
+  elevation="2"
+  outlined
+>let's go</v-btn> 
+  
 </template>
+
+
